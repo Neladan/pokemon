@@ -39,11 +39,4 @@ img {
     width: 200px;
 }
 
-@media only screen and (max-wight: 600px){
-    .search {
-        display: flex;
-        align-items: center;
-        
-    }    
-}
 
