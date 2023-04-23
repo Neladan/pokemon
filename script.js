@@ -1,7 +1,8 @@
 document.querySelector("#search").addEventListener("click", getPokemon)
 
 function getPokemon() {
-    const name = document.querySelector("#pokemonName").value
+    const pokemonName = document.querySelector("#pokemonName").value
+    const name = pokemonName.toLowerCase()
 
     fetch(`https://pokeapi.co/api/v2/pokemon/${name}`)
     .then((response) => response.json())
@@ -18,11 +19,11 @@ function getPokemon() {
 
         </div>
         
-        
         `
     })
 
     .catch((err) => {
         console.log("Pokemon not found", err)
+        document.querySelector(".pokemonInfo").innerHTML = "<p>Pokemon not found</p>"
     })
 }
